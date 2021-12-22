@@ -1,10 +1,11 @@
 import discord
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
-HOOK_ENDPOINT = ""
-DISC_TOKEN = ""
+HOOK_ENDPOINT = ""      # Webhook of another Discord channel to bridge the messages into
+DISC_TOKEN = ""         # Discord token of account within server
 client = discord.Client()
-ANNOYING_PEOPLE = []
+ANNOYING_PEOPLE = []    # List of user IDs of annoying people to translate messages into "Spongebob talk"
+DISC_SERVERS = []       # List of discord server IDs that you would like to log
 
 @client.event
 async def on_ready():
@@ -17,7 +18,8 @@ async def on_message(message):
         url = "https://cdn.discordapp.com/avatars/{}/{}".format(str(message.author.id), message.author.avatar)
         author = message.author
         content = "{}".format(message.clean_content)
-
+        
+if message.channel.id in DISC_SERVERS:
         if message.author.id in ANNOYING_PEOPLE:
             string_manipulated = ''
             special_cases = '!@?# '
