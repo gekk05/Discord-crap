@@ -1,0 +1,6 @@
+{
+  "discord_token":"discord.token",
+  "image_directory":"/banned_images/",
+  "cmd_whitelist": [605242825520578571, 154053845603844096,909169189749665803,686789029647482973],
+  "sus_users": [605242825520578571]
+}
