@@ -7,7 +7,9 @@
 # Whitelisted users can use the command in the Discord server `.banimg <message ID containing the image>`. This image will be downloaded and saved to the banned_images directory.
 # Subsequent discord events (messages) will be checked for all images within the ban_images directory
 #
-#
+# 
+
+# @TODO: Implement a decerator/wrapper for the blocking functions to avoid heartbeat timeouts 
 
 
 from skimage.metrics import structural_similarity
